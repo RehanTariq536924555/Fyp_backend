@@ -4,7 +4,7 @@ import { PaymentController } from './payment.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Order } from '../order/order.entity';
 import { Buyer } from '../users/entities/buyer.entity';
-import { Seller } from '../seller/entities/seller.entity';
+import { Seller } from '../Seller/entities/seller.entity';
 import { Listing } from '../listings/entities/listing.entity';
 import { AuthModule } from '../auth/auth.module';
 

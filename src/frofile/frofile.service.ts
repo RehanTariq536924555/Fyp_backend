@@ -2,7 +2,7 @@ import { Injectable, BadRequestException, NotFoundException } from '@nestjs/comm
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Profile } from './entities/frofile.entity'; // Ensure the correct path
-import { Seller } from '../seller/entities/seller.entity';
+import { Seller } from '../Seller/entities/seller.entity';
 
 @Injectable()
 export class ProfileService {

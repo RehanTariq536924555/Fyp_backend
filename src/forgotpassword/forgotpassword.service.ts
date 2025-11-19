@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
-import { SellerService } from '../seller/seller.service';
+import { SellerService } from '../Seller/seller.service';
 import { EmailVerificationService } from '../emailVerification/emailverification.service'; // Adjust to EmailVerificationService if needed
 
 @Injectable()

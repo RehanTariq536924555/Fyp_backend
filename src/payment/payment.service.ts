@@ -5,7 +5,7 @@ import { Repository } from 'typeorm';
 import { ConfigService } from '@nestjs/config';
 import { Order } from '../order/order.entity';
 import { Buyer } from '../users/entities/buyer.entity';
-import { Seller } from '../seller/entities/seller.entity';
+import { Seller } from '../Seller/entities/seller.entity';
 import { Listing } from '../listings/entities/listing.entity';
 import { CreatePaymentDto } from './dto/create-payment.dto';
 import Stripe from 'stripe';

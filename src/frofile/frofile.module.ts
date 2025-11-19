@@ -3,7 +3,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProfileService } from './frofile.service';
 import { Profile } from './entities/frofile.entity';
 import { ProfileController } from './frofile.controller';
-import { Seller } from '../seller/entities/seller.entity';
+import { Seller } from '../Seller/entities/seller.entity';
 import { SellerModule } from '../Seller/sellerModule.module';
 
 @Module({
