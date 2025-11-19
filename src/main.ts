@@ -16,7 +16,8 @@ async function bootstrap() {
     prefix: '/uploads/',
   });
 
-  await app.listen(3001);
-  console.log('NestJS application running on http://localhost:3001');
+  const port = process.env.PORT || 3001;
+  await app.listen(port);
+  console.log(`NestJS application running on port ${port}`);
 }
 bootstrap();
