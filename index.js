@@ -42,28 +42,33 @@ app.get('/listings', (_req, res) => {
 
 // Endpoint to add a new listing with images
 app.post('/listings', upload.array('images', 5), (req, res) => {
-  const { title, type, breed, age, weight, price, location, description, forEid } = req.body;
-  const imageUrls = req.files.map((file) => `/uploads/${file.filename}`);
+  try {
+    const { title, type, breed, age, weight, price, location, description, forEid } = req.body;
+    const imageUrls = req.files ? req.files.map((file) => `/uploads/${file.filename}`) : [];
 
-  const newListing = {
-    id: listings.length + 1,
-    title,
-    type,
-    breed,
-    age: parseInt(age) || undefined,
-    weight: parseInt(weight) || undefined,
-    price: parseInt(price) || undefined,
-    location,
-    description,
-    images: imageUrls,
-    status: 'active',
-    listed: new Date().toISOString(),
-    rating: 4.5,
-    forEid: forEid === 'true',
-  };
+    const newListing = {
+      id: listings.length + 1,
+      title,
+      type,
+      breed,
+      age: parseInt(age) || undefined,
+      weight: parseInt(weight) || undefined,
+      price: parseInt(price) || undefined,
+      location,
+      description,
+      images: imageUrls,
+      status: 'active',
+      listed: new Date().toISOString(),
+      rating: 4.5,
+      forEid: forEid === 'true',
+    };
 
-  listings.push(newListing);
-  res.status(201).json(newListing);
+    listings.push(newListing);
+    res.status(201).json(newListing);
+  } catch (error) {
+    console.error('Error creating listing:', error);
+    res.status(500).json({ error: 'Failed to create listing' });
+  }
 });
 
 const start = () => {
